@@ -11,12 +11,89 @@ temposCorte = temposCorteDados[[
 temposCortes = temposCorte.copy()
 temposCortes.Tempo_s = temposCorte.Tempo_s.str.replace(',', '').astype(float)
 
+# Criando um dicionário com os tipos de corte
 tipoCorte = {'CABEDAL': [], 'FORRO': [], 'COMPLETO': []}
 
-categoria = {'Bota': [], 'Coturno': [], 'Flat': [], 'Flatform': [], 'Loafer': [], 'Mule': [
-], 'Open': [], 'Oxford': [], 'Rasteira': [], 'Sapatilha': [], 'Slipper': [], 'Sneaker': []}
+# Criando um dicionário com as categorias
+temposCateg = {'BotaCa': [], 'CoturnoCa': [], 'FlatCa': [], 'FlatformCa': [], 'LoaferCa': [], 'MuleCa': [
+], 'OpenCa': [], 'OxfordCa': [], 'RasteiraCa': [], 'SapatilhaCa': [], 'SlipperCa': [], 'SneakerCa': [], 'BotaFo': [], 'CoturnoFo': [], 'FlatFo': [], 'FlatformFo': [], 'LoaferFo': [], 'MuleFo': [
+], 'OpenFo': [], 'OxfordFo': [], 'RasteiraFo': [], 'SapatilhaFo': [], 'SlipperFo': [], 'SneakerFo': [], 'BotaCo': [], 'CoturnoCo': [], 'FlatCo': [], 'FlatformCo': [], 'LoaferCo': [], 'MuleCo': [
+], 'OpenCo': [], 'OxfordCo': [], 'RasteiraCo': [], 'SapatilhaCo': [], 'SlipperCo': [], 'SneakerCo': []}
 
-final = tipoCorte.copy()
-for tipo in tipoCorte:
-    final[tipo] = categoria
-print(final)
+for linha in temposCortes.values:
+    if linha[0] == 'CABEDAL':
+        if linha[3] == 'Bota':
+            temposCateg['BotaCa'].append(linha[2])
+        elif linha[3] == 'Coturno':
+            temposCateg['CoturnoCa'].append(linha[2])
+        elif linha[3] == 'Flat':
+            temposCateg['FlatCa'].append(linha[2])
+        elif linha[3] == 'Flatform':
+            temposCateg['FlatformCa'].append(linha[2])
+        elif linha[3] == 'Loafer':
+            temposCateg['LoaferCa'].append(linha[2])
+        elif linha[3] == 'Mule':
+            temposCateg['MuleCa'].append(linha[2])
+        elif linha[3] == 'Open':
+            temposCateg['OpenCa'].append(linha[2])
+        elif linha[3] == 'Oxford':
+            temposCateg['OxfordCa'].append(linha[2])
+        elif linha[3] == 'Rasteira':
+            temposCateg['RasteiraCa'].append(linha[2])
+        elif linha[3] == 'Sapatilha':
+            temposCateg['SapatilhaCa'].append(linha[2])
+        elif linha[3] == 'Slipper':
+            temposCateg['SlipperCa'].append(linha[2])
+        elif linha[3] == 'Sneaker':
+            temposCateg['SneakerCa'].append(linha[2])
+    elif linha[0] == 'FORRO':
+        if linha[3] == 'Bota':
+            temposCateg['BotaFo'].append(linha[2])
+        elif linha[3] == 'Coturno':
+            temposCateg['CoturnoFo'].append(linha[2])
+        elif linha[3] == 'Flat':
+            temposCateg['FlatFo'].append(linha[2])
+        elif linha[3] == 'Flatform':
+            temposCateg['FlatformFo'].append(linha[2])
+        elif linha[3] == 'Loafer':
+            temposCateg['LoaferFo'].append(linha[2])
+        elif linha[3] == 'Mule':
+            temposCateg['MuleFo'].append(linha[2])
+        elif linha[3] == 'Open':
+            temposCateg['OpenFo'].append(linha[2])
+        elif linha[3] == 'Oxford':
+            temposCateg['OxfordFo'].append(linha[2])
+        elif linha[3] == 'Rasteira':
+            temposCateg['RasteiraFo'].append(linha[2])
+        elif linha[3] == 'Sapatilha':
+            temposCateg['SapatilhaFo'].append(linha[2])
+        elif linha[3] == 'Slipper':
+            temposCateg['SlipperFo'].append(linha[2])
+        elif linha[3] == 'Sneaker':
+            temposCateg['SneakerFo'].append(linha[2])
+    elif linha[0] == 'COMPLETO':
+        if linha[3] == 'Bota':
+            temposCateg['BotaCo'].append(linha[2])
+        elif linha[3] == 'Coturno':
+            temposCateg['CoturnoCo'].append(linha[2])
+        elif linha[3] == 'Flat':
+            temposCateg['FlatCo'].append(linha[2])
+        elif linha[3] == 'Flatform':
+            temposCateg['FlatformCo'].append(linha[2])
+        elif linha[3] == 'Loafer':
+            temposCateg['LoaferCo'].append(linha[2])
+        elif linha[3] == 'Mule':
+            temposCateg['MuleCo'].append(linha[2])
+        elif linha[3] == 'Open':
+            temposCateg['OpenCo'].append(linha[2])
+        elif linha[3] == 'Oxford':
+            temposCateg['OxfordCo'].append(linha[2])
+        elif linha[3] == 'Rasteira':
+            temposCateg['RasteiraCo'].append(linha[2])
+        elif linha[3] == 'Sapatilha':
+            temposCateg['SapatilhaCo'].append(linha[2])
+        elif linha[3] == 'Slipper':
+            temposCateg['SlipperCo'].append(linha[2])
+        elif linha[3] == 'Sneaker':
+            temposCateg['SneakerCo'].append(linha[2])
+print(temposCateg['BotaCo'])
