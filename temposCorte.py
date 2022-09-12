@@ -96,4 +96,8 @@ for linha in temposCortes.values:
             temposCateg['SlipperCo'].append(linha[2])
         elif linha[3] == 'Sneaker':
             temposCateg['SneakerCo'].append(linha[2])
-print(temposCateg['BotaCo'])
+
+teste = pd.DataFrame.from_dict(temposCateg, orient='index')
+dfTeste2 = teste.transpose()
+
+dfTeste2.to_csv("temposCorteSep.csv")
