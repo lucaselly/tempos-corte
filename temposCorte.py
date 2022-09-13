@@ -9,7 +9,10 @@ temposCorte = temposCorteDados[[
 
 # Criando uma cópia para transformar a coluna Tempo_s em Float
 temposCortes = temposCorte.copy()
+# Aqui é necessário adaptar dependendo da configuração do computador em que for roda.
+# Caso a unidade dos milhares seja feita por virgula, utilizar o seguinte:
 temposCortes.Tempo_s = temposCorte.Tempo_s.str.replace(',', '').astype(float)
+
 
 # Criando um dicionário com os tipos de corte
 tipoCorte = {'CABEDAL': [], 'FORRO': [], 'COMPLETO': []}
